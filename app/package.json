@@ -1,0 +1,24 @@
+{
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0"
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "name": "friend-finder",
+  "version": "1.0.0",
+  "description": "finds friends ",
+  "main": "server.js",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rjuner/friendFinder.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rjuner/friendFinder/issues"
+  },
+  "homepage": "https://github.com/rjuner/friendFinder#readme"
+}
