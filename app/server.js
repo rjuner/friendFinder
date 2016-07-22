@@ -7,7 +7,9 @@ var path = require('path');
 // EXPRESS CONFIGURATION
 // ++++++++++++++++++++++++++++++++++++++++++++++
 var app = express(); 
-var PORT = process.env.PORT || 80; 
+var PORT = 3030;
+
+// var PORT = process.env.PORT || 80; 
 
 app.use(bodyParser.json()); 
 app.use(bodyParser.urlencoded({extended: true})); 

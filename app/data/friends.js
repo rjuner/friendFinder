@@ -6,3 +6,5 @@ var friendArray = [
 		[4, 4, 4, 4, 4, 4, 4, 4, 4, 4]
 	}
 ];
+
+module.exports = friendArray;

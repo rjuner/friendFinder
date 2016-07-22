@@ -13,7 +13,7 @@ module.exports = function(app){
 
 	//when users visit 'api/friends/' they should get the JSON data
 	app.get('/api/friends', function(req, res){
-		res.json(friendsData);
+		res.json(friendData);
 	});
 	
 }
