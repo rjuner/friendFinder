@@ -23,12 +23,22 @@ module.exports = function(app){
 
 		//do matching math...
 
+		//This is the array of user scores =================================
 		var newFriend = req.body.scores;
+		var newfriendDiff = 0;
+		var friendScoreDiffs = [];
 
+		//This iterates over the user score array and adds the score together ===============================
+		for(var x = 0; x < newFriend.length; x++){
+			newfriendDiff += Math.abs(newFriend[x]); 
+		}
+		
+		console.log("This is the total user score: " + newfriendDiff);
+
+		//This iterates over the whole friend data array and calculates the difference of each friend's score =====================
 		for(var i = 0; i < friendData.length; i++){
 
 			var friendScore = (friendData[i].scores);
-			console.log("friend " + i + "'s array: ");
 
 			var totalDifference = 0
 
@@ -36,19 +46,30 @@ module.exports = function(app){
 
 				var diff = Math.abs(friendScore[k] - newFriend[k]);
 
-				totalDifference += diff; 
-
-				//console.log(diff);
-
+				totalDifference += diff;
 			}
 
-			console.log(totalDifference);
+			console.log("Difference for " + i + " is " + totalDifference);
 
+			friendScoreDiffs.push(totalDifference);
 
 		}
 
+		//This calculates which is the best friend ===============================================
+		var lowest = 0; 
+
+		for(var j = 0; j < friendScoreDiffs.length; j++){
+
+			if(friendScoreDiffs[j] <= friendScoreDiffs[lowest]){
+				lowest = j; 
+			}
+		}
+
+		console.log("the best friend index is: " + lowest);
+
+
 		//this will send the BEST FRIEND MATCH to ajax .post ...function(DATA)
-		res.json(friendData[0]);
+		res.json(friendData[lowest]);
 
 	});
 
