@@ -17,6 +17,9 @@
   },
   "author": "",
   "license": "ISC",
+  "engines": {
+    "node": "6.2.2"
+  },
   "bugs": {
     "url": "https://github.com/rjuner/friendFinder/issues"
   },
